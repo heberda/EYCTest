@@ -5,9 +5,9 @@ using System.Linq;
 
 namespace DHebert_EYCTest.Models
 {
-    public class Invoice
+    public class Get
     {
-        public Invoice(int id, string supplierName)
+        public Get(int id, string supplierName)
         {
             this.SupplierId = id;
             this.SupplierName = supplierName;

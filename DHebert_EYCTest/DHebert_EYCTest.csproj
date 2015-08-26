@@ -121,7 +121,7 @@
     </Compile>
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Country.cs" />
-    <Compile Include="Models\Invoice.cs" />
+    <Compile Include="Models\Get.cs" />
     <Compile Include="Models\InvoiceSelector.cs" />
     <Compile Include="Models\LineItem.cs" />
     <Compile Include="Models\Product.cs" />

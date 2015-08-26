@@ -4,7 +4,7 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Product.Name)
+                @Html.DisplayNameFor(model => model.Product.Name) <span class="badge">@Model.Count()</span>
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Product.UnitPrice)
@@ -26,10 +26,10 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayNameFor(model => model.Product.Name)
+                    @Html.DisplayFor(modelItem => item.Product.Name)
                 </td>
                 <td>
-                    @Html.DisplayNameFor(model => model.Product.UnitPrice)
+                    @Html.DisplayFor(modelItem => item.Product.UnitPrice)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Units)
