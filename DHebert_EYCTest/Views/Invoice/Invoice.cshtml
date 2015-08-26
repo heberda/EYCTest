@@ -1,0 +1,11 @@
+﻿@model DHebert_EYCTest.Models.Invoice
+
+<div>
+    <h4>Invoice</h4>
+    <hr />
+    <center>
+        @Html.HiddenFor(x => x.SupplierId)
+        @Html.DisplayFor(model => model.SupplierName)
+    </center>
+    @Html.Partial("LineItems", Model.LineItems)
+</div>

@@ -1,0 +1,55 @@
+﻿@model IEnumerable<DHebert_EYCTest.Models.LineItem>
+
+<table class="table table-responsive table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Product.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Product.UnitPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Units)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Total)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RetailerCharge)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayNameFor(model => model.Product.Name)
+                </td>
+                <td>
+                    @Html.DisplayNameFor(model => model.Product.UnitPrice)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Units)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Total)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RetailerCharge)
+                </td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>@string.Format("{0:c}", Model.Sum(x => x.Total))</td>
+            <td>@string.Format("{0:c}", Model.Sum(x => x.RetailerCharge))</td>
+        </tr>
+    </tfoot>
+</table>
