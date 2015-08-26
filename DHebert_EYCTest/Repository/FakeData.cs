@@ -71,13 +71,13 @@ namespace DHebert_EYCTest.Repository
                 bigSupplier.LineItems.Add(new LineItem(softDrink, 3000));
                 bigSupplier.LineItems.Add(new LineItem(chicken, 500));
                 bigSupplier.LineItems.Add(new LineItem(milk, 9000000));
-
+                
                 return new List<Invoice>
-            {
-                supplier1Invoice,
-                supplier2Invoice,
-                bigSupplier
-            };
+                {
+                    supplier1Invoice,
+                    supplier2Invoice,
+                    bigSupplier
+                };
             }
         }
     }
