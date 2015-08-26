@@ -6,7 +6,7 @@ using Moq;
 namespace DHebert_EYCTest.Tests
 {
     [TestClass]
-    public class UnitsCharges
+    public class BulkCharges
     {
         [TestMethod]
         public void When_There_Is_Less_Than_1000()
