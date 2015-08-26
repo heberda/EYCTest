@@ -11,10 +11,15 @@ namespace DHebert_EYCTest.Models
             this.Units = quantity;
         }
 
+        protected internal LineItem()
+        {
+        }
+
         #region Properties
 
-        public Product Product { get; set; }
+        public virtual Product Product { get; set; }
         
+        [Range(0, Int32.MaxValue)]
         public int Units { get; set; }
 
         [DataType(DataType.Currency)]
@@ -41,26 +46,30 @@ namespace DHebert_EYCTest.Models
 
         #region Private Methods
 
-        private double CalculateAdditionalCharges()
+        public double CalculateAdditionalCharges()
         {
             double charge = 0;
 
-            charge += locationCharge();
+            charge += LocationCharge();
 
-            charge += freshCharge();
+            charge += FreshCharge();
 
-            charge += bulkCharge();
+            charge += BulkCharge();
 
             return Math.Round(charge, 2);
         }
   
-        private double bulkCharge()
+        public double BulkCharge()
         {
-            if (Units < 1000)
+            if (Units <= 0)
+            {
+                return 0;
+            }
+            else if (Units <= 1000)
             {
                 return 0.06;
             }
-            else if (Units < 5000)
+            else if (Units <= 5000)
             {
                 return 0.04;
             }
@@ -70,14 +79,14 @@ namespace DHebert_EYCTest.Models
             }
         }
   
-        private double freshCharge()
+        public double FreshCharge()
         {
             return this.Product.Category.Equals(Category.Fresh) ? 0.01 : 0;
         }
     
-        private double locationCharge()
+        public double LocationCharge()
         {
-            return !this.Product.Country.Equals(Country.UK) ? 0.01 : 0;
+            return !(this.Product.Country.Equals(Country.UK)) ? 0.01 : 0;
         }
         
         #endregion
