@@ -1,0 +1,28 @@
+﻿@model DHebert_EYCTest.Models.InvoiceSelector
+
+@{
+    ViewBag.Title = "IndexNew";
+}
+
+@Styles.Render("~/Content/index")
+@Scripts.Render("~/bundles/index")
+
+<h2>Home</h2>
+
+<div class="form-inline">
+    <center>
+        @Html.DropDownListFor(x => x.SelectedInvoiceId, Model.Suppliers, "-- Select a supplier --", new { @class = "form-control", @id = "supplierToFind", @style = "width:250px" })
+        <button type="button" id="Go" class="btn">Go!</button>
+    </center>
+</div>
+
+<div id="invoice">
+
+</div>
+
+<script>
+    $("#supplierToFind").select2();
+</script>
+
+
+
