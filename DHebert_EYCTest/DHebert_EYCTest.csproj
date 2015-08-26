@@ -109,19 +109,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <Folder Include="Views\File\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\FileController.cs" />
     <Compile Include="Controllers\InvoiceController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Country.cs" />
-    <Compile Include="Models\Get.cs" />
+    <Compile Include="Models\Invoice.cs" />
     <Compile Include="Models\InvoiceSelector.cs" />
     <Compile Include="Models\LineItem.cs" />
     <Compile Include="Models\Product.cs" />
@@ -142,8 +143,9 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="App_Data\Programming Exercise EYC.docx" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\InvoiceErenBoy.js" />
+    <Content Include="Scripts\theFancyStuff.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
@@ -165,7 +167,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Invoice\Index.cshtml" />
-    <Content Include="Views\Invoice\Invoice.cshtml" />
+    <Content Include="Views\Invoice\Get.cshtml" />
     <Content Include="Views\Invoice\LineItems.cshtml" />
   </ItemGroup>
   <ItemGroup />

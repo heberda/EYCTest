@@ -26,7 +26,7 @@ namespace DHebert_EYCTest
 
             bundles.Add(new ScriptBundle("~/bundles/index").Include(
                       "~/Scripts/select2.js",
-                      "~/Scripts/InvoiceErenBoy.js"));
+                      "~/Scripts/theFancyStuff.js"));
 
             bundles.Add(new StyleBundle("~/Content/index").Include(
                       "~/Content/select2.css",

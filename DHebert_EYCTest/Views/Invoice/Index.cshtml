@@ -1,28 +1,27 @@
 ﻿@model DHebert_EYCTest.Models.InvoiceSelector
 
 @{
-    ViewBag.Title = "IndexNew";
+    ViewBag.Title = "Index";
 }
 
 @Styles.Render("~/Content/index")
 @Scripts.Render("~/bundles/index")
 
-<h2>Home</h2>
-
+<div class="jumbotron">
+    <h1>Welcome <small>to my one and only page</small></h1>
+    <p>What you see here is, give or take, eight hours work... Visual Studio did play a few games which led to file recovery software but that's typical VS.</p>
+    <p>I was keen to introduce create pages and persistence but time is the most valuable thing I own at the moment. I hope you guys like it and I welcome any questions.</p>
+    <p>@Html.ActionLink("Spec Sheet", "SpecSheet", "File", null, new { @class="btn btn-primary btn-lg", @role="button"})</p>
+</div>
 <div class="form-inline">
     <center>
         @Html.DropDownListFor(x => x.SelectedInvoiceId, Model.Suppliers, "-- Select a supplier --", new { @class = "form-control", @id = "supplierToFind", @style = "width:250px" })
-        <button type="button" id="Go" class="btn">Go!</button>
     </center>
 </div>
+
 <div class="alert alert-danger" role="alert" id="ajaxError" style="margin-top:25px;" hidden><strong>Oh no!</strong> Something seems to have gone wrong loading the data, my apologies. Please try again.</div>
-<div id="invoice">
 
-</div>
-
-<script>
-    $("#supplierToFind").select2();
-</script>
+<div id="invoice"></div>
 
 
 

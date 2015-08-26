@@ -1,5 +1,5 @@
 ﻿$(document).ready(function () {
-    $("#Go").bind("click", function () {
+    $("#supplierToFind").bind("change", function () {
         var supplierId = $("#supplierToFind").prop("value");
 
         if (supplierId > 0) {
@@ -22,4 +22,6 @@
             alert("If I'm not mistaken, you haven't selected a supplier...");
         }
     });
+
+    $("#supplierToFind").select2();
 });

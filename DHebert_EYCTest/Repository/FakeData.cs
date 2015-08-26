@@ -9,7 +9,7 @@ namespace DHebert_EYCTest.Repository
 {
     public class FakeData
     {
-        public Get GetInvoice(int id)
+        public Invoice GetInvoice(int id)
         {
             return Invoices.Where(x => x.SupplierId == id).First();
         }
@@ -19,12 +19,12 @@ namespace DHebert_EYCTest.Repository
             return Invoices.Select(x => new SelectListItem { Value = x.SupplierId.ToString(), Text = x.SupplierName }).ToList();
         }
 
-        public List<Get> ReturnAllInvoices()
+        public List<Invoice> ReturnAllInvoices()
         {
             return Invoices;
         }
 
-        public List<Get> Invoices
+        public List<Invoice> Invoices
         {
             get
             {
@@ -58,21 +58,21 @@ namespace DHebert_EYCTest.Repository
                     2.00,
                     Country.Spain);
 
-                var supplier1Invoice = new Get(1, "Supplier 1");
+                var supplier1Invoice = new Invoice(1, "Supplier 1");
                 supplier1Invoice.LineItems.Add(new LineItem(egg, 2000));
                 supplier1Invoice.LineItems.Add(new LineItem(chicken, 7000));
                 supplier1Invoice.LineItems.Add(new LineItem(milk, 9000));
 
-                var supplier2Invoice = new Get(2, "Supplier 2");
+                var supplier2Invoice = new Invoice(2, "Supplier 2");
                 supplier2Invoice.LineItems.Add(new LineItem(softDrink, 3000));
                 supplier2Invoice.LineItems.Add(new LineItem(juice, 50000));
 
-                var bigSupplier = new Get(3, "The big Supply Company Ltd");
+                var bigSupplier = new Invoice(3, "The big Supply Company Ltd");
                 bigSupplier.LineItems.Add(new LineItem(softDrink, 3000));
                 bigSupplier.LineItems.Add(new LineItem(chicken, 500));
                 bigSupplier.LineItems.Add(new LineItem(milk, 9000000));
 
-                return new List<Get>
+                return new List<Invoice>
             {
                 supplier1Invoice,
                 supplier2Invoice,
